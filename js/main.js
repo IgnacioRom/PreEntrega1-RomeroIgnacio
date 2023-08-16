@@ -1,3 +1,53 @@
+// ARRAYS DE PRODUCTOS
+const bebidas = {
+    flatWhite:{
+        nombre: 'Flat White',
+        precio: 500,
+        stock: true,
+    },
+    mocha:{
+        nombre: 'Mocha',
+        precio: 600,
+        stock: true,
+    },
+    latte:{
+        nombre: 'Latte',
+        precio: 500,
+        stock: true,
+    },
+    cafeHelado:{
+        nombre: 'Café Helado',
+        precio: 600,
+        stock: true,
+    },
+};
+const comidas = {
+    rollCanela:{
+        nombre: 'Roll de Canela',
+        precio: 650,
+        stock: true,
+    },
+    tortaPorcion:{
+        nombre: 'Torta porción',
+        precio: 900,
+        stock: true,
+    },
+    medialunaJyq:{
+        nombre: 'Medialuna Jamón y Queso',
+        precio: 400,
+        stock: true,
+    },
+    avocadoToast:{
+        nombre: 'Avocado Toast',
+        precio: 800,
+        stock: true,
+    },
+};
+// Variables y precios
+
+let totalBebida = 0;
+let totalComida = 0;
+
 //Bienvenida
 alert ('Bienvenidos a Growler Café! En breve estaremos brindandole nuestra carta de productos');
 function mostrarMenu() {
@@ -14,54 +64,48 @@ function mostrarMenu() {
     Avocado Toast = $800`;
     alert(menu);
 }
-// Variables y precios
-let flatWhite = 500;
-let mocha = 600;
-let latte = 500;
-let cafeHelado = 600;
-let rollCanela = 650;
-let tortaPorcion = 900;
-let medialunaJyq = 400;
-let avocadoToast = 800;
-let totalBebida = 0;
-let totalComida = 0;
 
 alert('Pasemos a realizar el pedido, por favor ingrese el número del producto que desea.')
 
 mostrarMenu();
 
-let pedidoBebida = parseInt(prompt (`Bebidas:\n 1) Flat White\n 2) Mocha\n 3) Latte\n 4) Café Helado.\n Ingrese el número de su pedido`));
+let pedidoBebida = parseInt(prompt (`Bebidas:
+1) Flat White
+2) Mocha
+3) Latte
+4) Café Helado.
+Ingrese el número de su pedido`));
 
-if (pedidoBebida == 1) {
-    totalBebida = flatWhite;
-    alert (`Usted ha pedido un Flat White, el precio es de $${flatWhite}`);
-} else if (pedidoBebida == 2) {
-    totalBebida = mocha;
-    alert (`Usted ha pedido un Mocha, el precio es de $${mocha}`);
-} else if (pedidoBebida == 3) {
-    totalBebida = latte;
-        alert (`Usted ha pedido un Latte, el precio es de $${latte}`);
-    } else if (pedidoBebida == 4) {
-        totalBebida = cafeHelado;
-            alert (`Usted ha pedido un Café Helado, el precio es de $${cafeHelado}`);
+if (pedidoBebida == 1 && bebidas.flatWhite.stock == true) {
+    totalBebida = bebidas.flatWhite.precio;
+    alert (`Usted ha pedido un Flat White, el precio es de $${bebidas.flatWhite.precio}`);
+} else if (pedidoBebida == 2 && bebidas.mocha.stock == true) {
+    totalBebida = bebidas.mocha.precio;
+    alert (`Usted ha pedido un Mocha, el precio es de $${bebidas.mocha.precio}`);
+} else if (pedidoBebida == 3 && bebidas.latte.stock == true) {
+    totalBebida = bebidas.latte.precio;
+        alert (`Usted ha pedido un Latte, el precio es de $${bebidas.latte.precio}`);
+    } else if (pedidoBebida == 4 && bebidas.cafeHelado.stock == true) {
+        totalBebida = bebidas.cafeHelado.precio;
+            alert (`Usted ha pedido un Café Helado, el precio es de $${bebidas.cafeHelado.precio}`);
         } else {
                 alert ('El número ingresado no corresponde a ninguna bebida, por favor vuelva a intentarlo');
             }
 
 let pedidoComida = parseInt(prompt (`Comidas:\n 5) Roll de Canela\n 6) Torta porción\n 7) Medialuna Jamón y Queso\n 8) Avocado Toast.\n Ingrese el número de su pedido`));
 
-if (pedidoComida == 5) {
-    totalComida = rollCanela;
-    alert (`Usted ha pedido un Roll de Canela, el precio es de $${rollCanela}`);
-} else if (pedidoComida == 6) {
-    totalComida = tortaPorcion;
-    alert (`Usted ha pedido una porción de torta, el precio es de $${tortaPorcion}`);
-} else if (pedidoComida == 7) {
-    totalComida = medialunaJyq;
-    alert (`Usted ha pedido una Medialuna Jamón y Queso, el precio es de $${medialunaJyq}`);
-} else if (pedidoComida == 8) {
-    totalComida = avocadoToast;
-    alert (`Usted ha pedido un Avocado Toast, el precio es de $${avocadoToast}`);
+if (pedidoComida == 5 && comidas.rollCanela.stock == true) {
+    totalComida = comidas.rollCanela.precio;
+    alert (`Usted ha pedido un Roll de Canela, el precio es de $${comidas.rollCanela.precio}`);
+} else if (pedidoComida == 6 && comidas.tortaPorcion.stock == true) {
+    totalComida = comidas.tortaPorcion.precio;
+    alert (`Usted ha pedido una porción de torta, el precio es de $${comidas.tortaPorcion.precio}`);
+} else if (pedidoComida == 7 && comidas.medialunaJyq.stock == true) {
+    totalComida = comidas.medialunaJyq.precio;
+    alert (`Usted ha pedido una Medialuna Jamón y Queso, el precio es de $${comidas.medialunaJyq.precio}`);
+} else if (pedidoComida == 8 && comidas.avocadoToast.stock == true) {
+    totalComida = comidas.avocadoToast.precio;
+    alert (`Usted ha pedido un Avocado Toast, el precio es de $${comidas.avocadoToast.precio}`);
 } else {
     alert ('El número ingresado no corresponde a ninguna comida, por favor vuelva a intentarlo');
 }
